@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head"></head>
+
+<body>
+
+    <div class="splash-container login-wrapper">
+        <div class="card">
+            <div class="card-header text-center">
+                <img
+                        class="logo-img"
+                        src="images/logo-4.png"
+                        height="45"
+                        alt="logo"
+                />
+            </div>
+
+            <div class="card-body">
+                <form action="welcome.html">
+                    <div class="form-group">
+                        <input
+                                class="form-control form-control-lg"
+                                id="username"
+                                type="text"
+                                placeholder="Username"
+                                autocomplete="off"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <input
+                                class="form-control form-control-lg"
+                                id="password"
+                                type="password"
+                                placeholder="Password"
+                        />
+                    </div>
+
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            <input class="custom-control-input" type="checkbox" /><span
+                                class="custom-control-label"
+                        >Remember Me</span
+                        >
+                        </label>
+                    </div>
+
+                    <div>
+                        <button type="submit" class="btn btn-primary btn-lg btn-block">
+                            Sign in
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div th:replace="/fragments/footer :: footer"></div>
+
+    <div th:replace="/fragments/javascript :: js"></div>
+
+</body>
+
+</html>
