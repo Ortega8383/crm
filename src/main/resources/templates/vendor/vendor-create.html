@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head th:replace="/fragments/head :: head"></head>
 
@@ -24,24 +24,24 @@
                                 <header class="panel-heading">
                                     <h2 class="panel-title mb-5">Vendor Create</h2>
                                     <div class="panel-body">
-                                        <form>
+                                        <form th:object="${vendor}" th:action="@{/vendor/insert}">
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="company">Company</label>
                                                     <input type="text" class="form-control" id="company"
-                                                           placeholder="Official Company Full Name">
+                                                           placeholder="Official Company Full Name" th:field="*{company}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="firstName">First Name</label>
                                                     <input type="text" class="form-control" id="firstName"
-                                                           placeholder="First Name">
+                                                           placeholder="First Name" th:field="*{firstName}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="lastName">Last Name</label>
                                                     <input type="text" class="form-control" id="lastName"
-                                                           placeholder="Last Name">
+                                                           placeholder="Last Name" th:field="*{lastName}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -49,51 +49,53 @@
                                                     <label>Gender</label><br>
                                                     <label class="custom-control custom-radio custom-control-inline">
                                                         <input type="radio" name="radio-inline"
-                                                               class="custom-control-input"
+                                                               class="custom-control-input" th:field="*{gender}"
                                                                th:value="MALE"><span
                                                             class="custom-control-label">Male</span>
                                                     </label>
                                                     <label class="custom-control custom-radio custom-control-inline">
                                                         <input type="radio" name="radio-inline"
-                                                               class="custom-control-input"
+                                                               class="custom-control-input" th:field="*{gender}"
                                                                th:value="FEMALE"><span class="custom-control-label">Female</span>
                                                     </label>
                                                  </div>
                                               <div class="form-group col-md-6">
                                                 <label for="birthday">Birthday</label>
-                                                <input type="date" class="form-control" id="birthday">
+                                                <input type="date" class="form-control" id="birthday" th:field="*{birthday}">
                                               </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" placeholder="Email">
+                                                    <input type="email" class="form-control" id="email" placeholder="Email" th:field="*{email}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="phone">Phone</label>
-                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number">
+                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" th:field="*{phone}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="address">Address Line 1</label>
-                                                    <input type="text" class="form-control" id="address" placeholder="District, Avenue, Street">
+                                                    <input type="text" class="form-control" id="address" placeholder="District, Avenue, Street"
+                                                           th:field="*{addressLine1}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="address2">Address Line 2</label>
-                                                    <input type="text" class="form-control" id="address2" placeholder="Site, Building, Apartment">
+                                                    <input type="text" class="form-control" id="address2" placeholder="Site, Building, Apartment"
+                                                           th:field="*{addressLine2}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="town">Town</label>
-                                                    <input type="text" class="form-control" id="town" placeholder="Town">
+                                                    <input type="text" class="form-control" id="town" placeholder="Town" th:field="*{town}">
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="city">City</label>
-                                                    <select id="city" class="form-control">
+                                                    <select id="city" class="form-control" th:field="*{city}">
                                                         <option selected>Choose...</option>
                                                         <option value="1">Adana</option>
                                                         <option value="2">Adıyaman</option>
@@ -180,13 +182,13 @@
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="zipCode">Zip</label>
-                                                    <input type="text" class="form-control" id="zipCode" placeholder="Zipcode">
+                                                    <input type="text" class="form-control" id="zipCode" placeholder="Zipcode" th:field="*{zipCode}">
                                                 </div>
                                             </div>
                                           <div class="form-row">
                                             <div class="form-group col-md-12">
                                               <label for="notes">Notes</label>
-                                              <textarea id="notes" class="form-control" placeholder="Notes..."></textarea>
+                                              <textarea id="notes" class="form-control" placeholder="Notes..." th:field="*{notes}"></textarea>
                                             </div>
                                           </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
