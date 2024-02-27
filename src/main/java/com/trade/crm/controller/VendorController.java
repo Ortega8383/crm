@@ -33,4 +33,10 @@ public class VendorController {
         model.addAttribute("vendor", new VendorDTO());
         return "vendor/vendor-success";
     }
+
+    @GetMapping("/list")
+    public String listVendors(Model model) {
+//        model.addAttribute("vendorList", vendorService.listAllVendors());
+        return "vendor/vendor-list";
+    }
 }
