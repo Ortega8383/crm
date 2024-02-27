@@ -29,7 +29,8 @@
                                                 <div class="form-group col-md-12">
                                                     <label for="company">Company</label>
                                                     <input type="text" class="form-control" id="company"
-                                                           placeholder="Official Company Full Name" th:field="*{company}">
+                                                           placeholder="Official Company Full Name"
+                                                           th:field="*{company}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
@@ -58,40 +59,46 @@
                                                                class="custom-control-input" th:field="*{gender}"
                                                                th:value="FEMALE"><span class="custom-control-label">Female</span>
                                                     </label>
-                                                 </div>
-                                              <div class="form-group col-md-6">
-                                                <label for="birthday">Birthday</label>
-                                                <input type="date" class="form-control" id="birthday" th:field="*{birthday}">
-                                              </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="birthday">Birthday</label>
+                                                    <input type="date" class="form-control" id="birthday"
+                                                           th:field="*{birthday}">
+                                                </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="email">Email</label>
-                                                    <input type="email" class="form-control" id="email" placeholder="Email" th:field="*{email}">
+                                                    <input type="email" class="form-control" id="email"
+                                                           placeholder="Email" th:field="*{email}">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="phone">Phone</label>
-                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" th:field="*{phone}">
+                                                    <input type="tel" class="form-control" id="phone"
+                                                           placeholder="Phone Number" th:field="*{phone}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="address">Address Line 1</label>
-                                                    <input type="text" class="form-control" id="address" placeholder="District, Avenue, Street"
+                                                    <input type="text" class="form-control" id="address"
+                                                           placeholder="District, Avenue, Street"
                                                            th:field="*{addressLine1}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-12">
                                                     <label for="address2">Address Line 2</label>
-                                                    <input type="text" class="form-control" id="address2" placeholder="Site, Building, Apartment"
+                                                    <input type="text" class="form-control" id="address2"
+                                                           placeholder="Site, Building, Apartment"
                                                            th:field="*{addressLine2}">
                                                 </div>
                                             </div>
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="town">Town</label>
-                                                    <input type="text" class="form-control" id="town" placeholder="Town" th:field="*{town}">
+                                                    <input type="text" class="form-control" id="town" placeholder="Town"
+                                                           th:field="*{town}">
                                                 </div>
                                                 <div class="form-group col-md-4">
                                                     <label for="city">City</label>
@@ -182,17 +189,26 @@
                                                 </div>
                                                 <div class="form-group col-md-2">
                                                     <label for="zipCode">Zip</label>
-                                                    <input type="text" class="form-control" id="zipCode" placeholder="Zipcode" th:field="*{zipCode}">
+                                                    <input type="text" class="form-control" id="zipCode"
+                                                           placeholder="Zipcode" th:field="*{zipCode}">
                                                 </div>
                                             </div>
-                                          <div class="form-row">
-                                            <div class="form-group col-md-12">
-                                              <label for="notes">Notes</label>
-                                              <textarea id="notes" class="form-control" placeholder="Notes..." th:field="*{notes}"></textarea>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="notes">Notes</label>
+                                                    <textarea id="notes" class="form-control" placeholder="Notes..."
+                                                              th:field="*{notes}"></textarea>
+                                                </div>
                                             </div>
-                                          </div>
                                             <button type="submit" class="btn btn-primary">Submit</button>
                                         </form>
+                                        <div class="container-fluid dashboard-content">
+                                            <div class="ecommerce-widget">
+                                                <div class="row d-flex justify-content-center">
+                                                        <p style="color: darkred">Vendor has been successfully registered!</p>
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </header>
                             </section>
