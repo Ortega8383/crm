@@ -15,9 +15,10 @@ import java.time.LocalDate;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "contacts")
+@Table(name = "vendors")
 @Where(clause = "is_deleted = false")
-public class Contact extends BaseEntity {
+public class Vendor extends BaseEntity {
+    private String company;
     private String firstName;
     private String lastName;
     private Gender gender;
