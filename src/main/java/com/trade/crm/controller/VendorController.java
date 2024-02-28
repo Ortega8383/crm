@@ -36,7 +36,7 @@ public class VendorController {
 
     @GetMapping("/list")
     public String listVendors(Model model) {
-//        model.addAttribute("vendorList", vendorService.listAllVendors());
+        model.addAttribute("vendorList", vendorService.listAllVendors());
         return "vendor/vendor-list";
     }
 }
