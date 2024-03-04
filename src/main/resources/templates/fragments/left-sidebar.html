@@ -28,10 +28,31 @@
                                aria-expanded="false"
                                data-target="#submenu-1"
                                aria-controls="submenu-1">
-                                <i class="fa fa-fw fa-user-circle"></i>Vendor
+                                <i class="fa fa-fw fa-user-circle"></i>Potential Vendor
                                 <span class="badge badge-success">6</span>
                             </a>
                             <div id="submenu-1" class="collapse submenu" style="">
+                                <ul class="nav flex-column">
+                                    <li class="nav-item">
+                                        <a class="nav-link" th:href="@{/potentialVendor/create}">Potential Vendor Create</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" th:href="@{/potentialVendor/list}">Potential Vendor List</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link"
+                               href="#"
+                               data-toggle="collapse"
+                               aria-expanded="false"
+                               data-target="#submenu-2"
+                               aria-controls="submenu-2">
+                                <i class="fa fa-fw fa-user-circle"></i>Vendor
+                                <span class="badge badge-success">6</span>
+                            </a>
+                            <div id="submenu-2" class="collapse submenu" style="">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
                                         <a class="nav-link" th:href="@{/vendor/create}">Vendor Create</a>
@@ -47,38 +68,18 @@
                                href="#"
                                data-toggle="collapse"
                                aria-expanded="false"
-                               data-target="#submenu-2"
-                               aria-controls="submenu-2">
-                                <i class="fas fa-chalkboard-teacher"></i>Client
-                            </a>
-                            <div id="submenu-2" class="collapse submenu" style="">
-                                <ul class="nav flex-column">
-                                    <li class="nav-item">
-                                        <a class="nav-link" th:href="@{/task/create}">Client Create
-                                            <span class="badge badge-secondary">New</span></a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" th:href="@{/project/manager/project-status}">Client List</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link"
-                               href="#"
-                               data-toggle="collapse"
-                               aria-expanded="false"
                                data-target="#submenu-3"
                                aria-controls="submenu-3">
-                                <i class="fas fa-user-graduate"></i>Potential Client
+                                <i class="fa fa-fw fa-user-circle"></i>Potential Client
+                                <span class="badge badge-success">6</span>
                             </a>
                             <div id="submenu-3" class="collapse submenu" style="">
                                 <ul class="nav flex-column">
                                     <li class="nav-item">
-                                        <a class="nav-link" th:href="@{/task/employee/pending-tasks}">Potential Client Create</a>
+                                        <a class="nav-link" th:href="@{/potentialClient/create}">Potential Client Create</a>
                                     </li>
                                     <li class="nav-item">
-                                        <a class="nav-link" th:href="@{/task/employee/archive}">Potential Client List</a>
+                                        <a class="nav-link" th:href="@{/potentialClient/list}">Potential Client List</a>
                                     </li>
                                 </ul>
                             </div>

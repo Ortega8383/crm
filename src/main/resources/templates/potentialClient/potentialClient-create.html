@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="/fragments/head :: head"></head>
+
+<body>
+
+<div class="dashboard-main-wrapper">
+
+    <div th:replace="/fragments/header :: header"></div>
+
+    <div th:replace="/fragments/left-sidebar :: left-sidebar"></div>
+
+    <div class="dashboard-wrapper">
+
+        <div class="dashboard-ecommerce">
+
+            <div class="container-fluid dashboard-content">
+                <div class="ecommerce-widget">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-6 col-md-12">
+                            <section class="panel panel-transparent">
+                                <header class="panel-heading">
+                                    <h2 class="panel-title mb-5">Potential Client Create</h2>
+                                    <div class="panel-body">
+                                        <form th:object="${potentialClient}" th:action="@{/potentialClient/insert}" method="post">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="company">Company</label>
+                                                    <input type="text" class="form-control" id="company"
+                                                           placeholder="Official Company Full Name" th:field="*{company}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('company')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('company')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="firstName">First Name</label>
+                                                    <input type="text" class="form-control" id="firstName"
+                                                           placeholder="First Name" th:field="*{firstName}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('firstName')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('firstName')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="lastName">Last Name</label>
+                                                    <input type="text" class="form-control" id="lastName"
+                                                           placeholder="Last Name" th:field="*{lastName}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('lastName')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('lastName')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label>Gender</label><br>
+                                                    <label class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" name="radio-inline"
+                                                               class="custom-control-input" th:field="*{gender}"
+                                                               th:value="MALE"><span
+                                                            class="custom-control-label">Male</span>
+                                                    </label>
+                                                    <label class="custom-control custom-radio custom-control-inline">
+                                                        <input type="radio" name="radio-inline"
+                                                               class="custom-control-input" th:field="*{gender}"
+                                                               th:value="FEMALE"><span class="custom-control-label">Female</span>
+                                                    </label>
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('gender')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('gender')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                 </div>
+                                              <div class="form-group col-md-6">
+                                                <label for="birthday">Birthday</label>
+                                                <input type="date" class="form-control" id="birthday" th:field="*{birthday}">
+                                                  <div class="text-danger" th:if="${#fields.hasErrors('birthday')}">
+                                                      <ol>
+                                                          <li th:each="error : ${#fields.errors('birthday')}" th:text="${error}"></li>
+                                                      </ol>
+                                                  </div>
+                                              </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="email">Email</label>
+                                                    <input type="email" class="form-control" id="email" placeholder="Email" th:field="*{email}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('email')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('email')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                    <label for="phone">Phone</label>
+                                                    <input type="tel" class="form-control" id="phone" placeholder="Phone Number" th:field="*{phone}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('phone')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('phone')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="address">Address Line 1</label>
+                                                    <input type="text" class="form-control" id="address" placeholder="District, Avenue, Street"
+                                                           th:field="*{addressLine1}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('addressLine1')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('addressLine1')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-12">
+                                                    <label for="address2">Address Line 2</label>
+                                                    <input type="text" class="form-control" id="address2" placeholder="Site, Building, Apartment"
+                                                           th:field="*{addressLine2}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('addressLine2')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('addressLine2')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="town">Town</label>
+                                                    <input type="text" class="form-control" id="town" placeholder="Town" th:field="*{town}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('town')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('town')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-4">
+                                                    <label for="city">City</label>
+                                                    <select id="city" class="form-control" th:field="*{city}">
+                                                        <option selected value="0">Choose...</option>
+                                                        <option value="Adana">Adana</option>
+                                                        <option value="Adıyaman">Adıyaman</option>
+                                                        <option value="Afyonkarahisar">Afyonkarahisar</option>
+                                                        <option value="Ağrı">Ağrı</option>
+                                                        <option value="Amasya">Amasya</option>
+                                                        <option value="Ankara">Ankara</option>
+                                                        <option value="Antalya">Antalya</option>
+                                                        <option value="Artvin">Artvin</option>
+                                                        <option value="Aydın">Aydın</option>
+                                                        <option value="Balıkesir">Balıkesir</option>
+                                                        <option value="Bilecik">Bilecik</option>
+                                                        <option value="Bingöl">Bingöl</option>
+                                                        <option value="Bitlis">Bitlis</option>
+                                                        <option value="Bolu">Bolu</option>
+                                                        <option value="Burdur">Burdur</option>
+                                                        <option value="Bursa">Bursa</option>
+                                                        <option value="Çanakkale">Çanakkale</option>
+                                                        <option value="Çankırı">Çankırı</option>
+                                                        <option value="Çorum">Çorum</option>
+                                                        <option value="Denizli">Denizli</option>
+                                                        <option value="Diyarbakır">Diyarbakır</option>
+                                                        <option value="Edirne">Edirne</option>
+                                                        <option value="Elazığ">Elazığ</option>
+                                                        <option value="Erzincan">Erzincan</option>
+                                                        <option value="Erzurum">Erzurum</option>
+                                                        <option value="Eskişehir">Eskişehir</option>
+                                                        <option value="Gaziantep">Gaziantep</option>
+                                                        <option value="Giresun">Giresun</option>
+                                                        <option value="Gümüşhane">Gümüşhane</option>
+                                                        <option value="Hakkâri">Hakkâri</option>
+                                                        <option value="Hatay">Hatay</option>
+                                                        <option value="Isparta">Isparta</option>
+                                                        <option value="Mersin">Mersin</option>
+                                                        <option value="İstanbul">İstanbul</option>
+                                                        <option value="İzmir">İzmir</option>
+                                                        <option value="Kars">Kars</option>
+                                                        <option value="Kastamonu">Kastamonu</option>
+                                                        <option value="Kayseri">Kayseri</option>
+                                                        <option value="Kırklareli">Kırklareli</option>
+                                                        <option value="Kırşehir">Kırşehir</option>
+                                                        <option value="Kocaeli">Kocaeli</option>
+                                                        <option value="Konya">Konya</option>
+                                                        <option value="Kütahya">Kütahya</option>
+                                                        <option value="Malatya">Malatya</option>
+                                                        <option value="Manisa">Manisa</option>
+                                                        <option value="Kahramanmaraş">Kahramanmaraş</option>
+                                                        <option value="Mardin">Mardin</option>
+                                                        <option value="Muğla">Muğla</option>
+                                                        <option value="Muş">Muş</option>
+                                                        <option value="Nevşehir">Nevşehir</option>
+                                                        <option value="Niğde">Niğde</option>
+                                                        <option value="Ordu">Ordu</option>
+                                                        <option value="Rize">Rize</option>
+                                                        <option value="Sakarya">Sakarya</option>
+                                                        <option value="Samsun">Samsun</option>
+                                                        <option value="Siirt">Siirt</option>
+                                                        <option value="Sinop">Sinop</option>
+                                                        <option value="Sivas">Sivas</option>
+                                                        <option value="Tekirdağ">Tekirdağ</option>
+                                                        <option value="Tokat">Tokat</option>
+                                                        <option value="Trabzon">Trabzon</option>
+                                                        <option value="Tunceli">Tunceli</option>
+                                                        <option value="Şanlıurfa">Şanlıurfa</option>
+                                                        <option value="Uşak">Uşak</option>
+                                                        <option value="Van">Van</option>
+                                                        <option value="Yozgat">Yozgat</option>
+                                                        <option value="Zonguldak">Zonguldak</option>
+                                                        <option value="Aksaray">Aksaray</option>
+                                                        <option value="Bayburt">Bayburt</option>
+                                                        <option value="Karaman">Karaman</option>
+                                                        <option value="Kırıkkale">Kırıkkale</option>
+                                                        <option value="Batman">Batman</option>
+                                                        <option value="Şırnak">Şırnak</option>
+                                                        <option value="Bartın">Bartın</option>
+                                                        <option value="Ardahan">Ardahan</option>
+                                                        <option value="Iğdır">Iğdır</option>
+                                                        <option value="Yalova">Yalova</option>
+                                                        <option value="Karabük">Karabük</option>
+                                                        <option value="Kilis">Kilis</option>
+                                                        <option value="Osmaniye">Osmaniye</option>
+                                                        <option value="Düzce">Düzce</option>
+                                                    </select>
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('city')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('city')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group col-md-2">
+                                                    <label for="zipCode">Zip</label>
+                                                    <input type="text" class="form-control" id="zipCode" placeholder="Zipcode" th:field="*{zipCode}">
+                                                    <div class="text-danger" th:if="${#fields.hasErrors('zipCode')}">
+                                                        <ol>
+                                                            <li th:each="error : ${#fields.errors('zipCode')}" th:text="${error}"></li>
+                                                        </ol>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                          <div class="form-row">
+                                            <div class="form-group col-md-12">
+                                              <label for="notes">Notes</label>
+                                              <textarea id="notes" class="form-control" placeholder="Notes..." th:field="*{notes}"></textarea>
+                                            </div>
+                                          </div>
+                                            <button type="submit" class="btn btn-primary">Submit</button>
+                                        </form>
+                                    </div>
+                                </header>
+                            </section>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="/fragments/footer :: footer"></div>
+
+</div>
+
+<div th:replace="/fragments/javascript :: js"></div>
+
+</body>
+
+</html>
