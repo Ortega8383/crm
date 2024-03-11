@@ -38,7 +38,7 @@
                       </tr>
                       </thead>
                       <tbody>
-                      <tr th:each="each, eachStat : ${potentialVendorList}">
+                      <tr th:each="each : ${potentialVendorList}">
                         <td th:text="${eachStat.index + 1}"></td>
                         <td th:text="${each.company}"></td>
                         <td th:text="${each.firstName + ' ' + each.lastName}"></td>
