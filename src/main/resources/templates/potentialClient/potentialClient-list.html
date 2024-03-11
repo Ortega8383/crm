@@ -28,6 +28,7 @@
                     <table class="table table-striped">
                       <thead>
                       <tr>
+                        <th scope="col">#</th>
                         <th scope="col">Company</th>
                         <th scope="col">Full Name</th>
                         <th scope="col">Email</th>
@@ -38,6 +39,7 @@
                       </thead>
                       <tbody>
                       <tr th:each="each : ${potentialClientList}">
+                        <td th:text="${eachStat.index + 1}"></td>
                         <td th:text="${each.company}"></td>
                         <td th:text="${each.firstName + ' ' + each.lastName}"></td>
                         <td th:text="${each.email}"></td>
